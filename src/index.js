@@ -1,13 +1,7 @@
-const targetWordNode = document.getElementById('target-word');
-const availableLetters = 'abcdefghijklmnopqrstuvwxyz';
-const remainingGuesses = 0;
-const maxGuesses = 10;
-const messages = [
-    'you win! you are safe',
-    'you lose! the bear is coming!',
-    'you already guessed that letter - try again',
-    'please enter a valid guess'
-];
+import checkGuess from './check-guess.js';
+
+const guessFormNode = document.getElementById('guess-form');
+
 const words = [
     'yogi',
     'smokey',
@@ -15,39 +9,19 @@ const words = [
     'fozzie',
     'corduroy'
 ];
-let gameStarted = false;
-let guessedLetters = [];
-let guessingWord = [];
 
-function startGame() {
-    remainingGuesses = maxGuesses;
-    gameStarted = false;
-    let targetWord = words[Math.floor(Math.random() * words.length)];
-    guessedLetters = [];
-    guessingWord = [];
+let targetWord = words[Math.floor(Math.random() * words.length)];
+console.log(targetWord);    
+let answerArray = [];
+let correctGuessCount = 0;
 
-    //make sure the hangman image is cleared out??
-
-    //build the guessing word and clear it out
-    
-}
-
-const guessInput = document.getElementById('guess-letters').nodeValue;
-const answerArray = [];
-
-// making the _ spaces appear where the word will be
 for(let i = 0; i < targetWord.length; i++) {
-    const letterSpaces = document.createElement('span')
-    letterSpaces.classList.add('target-letters');
     answerArray[i] = '_';
-    targetWordNode.appendChild(letterSpaces);
+    const targetWordNode = document.getElementById('target-words');
+    const targetWordLetters = document.createElement('span');
+    targetWordLetters.classList.add('target-words');
+
+    targetWordLetters.appendChild(targetWordNode);    
 }
 
-const remainingLetters = targetWord.length;
 
-//while(remainingLetters > 0) {
-    // game code
-    // show player their progress
-    // take input from the player
-    // update answerAray 
-}
