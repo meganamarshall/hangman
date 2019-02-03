@@ -1,0 +1,6 @@
+#canvas {
+    height: 250px;
+    width: 200px;
+    border: 1px solid brown;
+    display: inline-block;
+}
