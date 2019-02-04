@@ -8,4 +8,5 @@ function checkGuess(guess, targetWord) {
     }
 }
 
+
 export default checkGuess;
