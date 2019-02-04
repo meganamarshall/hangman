@@ -52,11 +52,14 @@ inputFormNode.addEventListener('submit', function() {
     let result = checkGuess(guess, targetWord);
 
     if(result) {
-        answerArray[correctGuessCount] = guess;
-        correctGuessCount++;
+        correctLetters[correctLetterCount] = guess;
+        correctLetterCount++;
         targetWordCreate();
+        return result;
     }
+
    
+    console.log(result);
 });
 
 
