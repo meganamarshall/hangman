@@ -41,7 +41,8 @@ function targetWordCreate() {
 }
 console.log(targetWordCreate);
 
-inputFormNode.addEventListener('click', function() {
+inputFormNode.addEventListener('submit', function() {
+    event.preventDefault();
     const guess = guessLetterNode.value;
     if(guess === undefined) {
         return;
@@ -55,8 +56,6 @@ inputFormNode.addEventListener('click', function() {
         correctGuessCount++;
         targetWordCreate();
     }
-
-    console.log(targetWordCreate);
    
 });
 
