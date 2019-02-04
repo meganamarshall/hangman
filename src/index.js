@@ -34,7 +34,7 @@ function targetWordCreate() {
             targetWordNode.textContent += targetLetter;
         }
         else {
-            targetWordNode.textContent += '_';
+            targetWordNode.textContent += ' _';
             lettersRemaining++;
         }
     }   
@@ -42,7 +42,7 @@ function targetWordCreate() {
 console.log(targetWordCreate);
 
 inputFormNode.addEventListener('click', function() {
-    const guess = inputFormNode.value;
+    const guess = guessLetterNode.value;
     if(guess === undefined) {
         return;
     }
