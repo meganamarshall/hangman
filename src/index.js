@@ -4,6 +4,7 @@ import alphabet from './alphabet.js';
 const inputFormNode = document.getElementById('input-form');
 const targetWordNode = document.getElementById('target-word');
 const guessLetterNode = document.getElementById('guess-letter');
+const wrongGuessesNode = document.getElementById('wrong-guesses');
 
 const words = [
     'yogi',
@@ -57,9 +58,12 @@ inputFormNode.addEventListener('submit', function() {
         targetWordCreate();
         return result;
     }
-
-   
-    console.log(result);
+    else {
+        wrongGuessesNode.classList.add('wrong-guess');
+        wrongGuessesNode.textContent += guess;
+  
+    }
+    
 });
 
 

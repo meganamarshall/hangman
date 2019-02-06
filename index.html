@@ -9,17 +9,17 @@
 </head>
 <body>
     <header>
-        <h1>Which Famous Bear Hiding in the Woods?</h1>
+        <h1>Which Famous Bear is Hiding in the Woods?</h1>
     </header>
 
     <section id="canvas">
-        <span id="woods"></span>
+        <span id="woods"><img src="./assets/bear-0.png" alt="scary bear"></span>
     </section>
 
     <section>
         <form id="input-form">
         <h2>Guess the Letters in the Bear's Name</h2>
-        <input id="guess-letter" type="text" maxlength="1" minlength="1"></input>
+        <input id="guess-letter" type="text" maxlength="1" minlength="1" placeholder="Letter"></input>
         <button>Guess</button>
         </form>
     </section>
@@ -28,8 +28,9 @@
         <span id="target-word"></span>
     </section>
 
-    <section id="wrong-guesses">
-        <h2>Letters Guessed</h2>
+    <section>
+        <h2>Incorrect Guesses</h2>
+        <p id="wrong-guesses"></p>
     </section>
     <script type="module" src="../src/index.js"></script>
 </body>
