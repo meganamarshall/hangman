@@ -1,12 +1,13 @@
 import checkGuess from './check-guess.js';
-import alphabet from './alphabet.js';
+//import alphabet from './alphabet.js';
 
 const inputFormNode = document.getElementById('input-form');
 const targetWordNode = document.getElementById('target-word');
 const guessLetterNode = document.getElementById('guess-letter');
 const wrongGuessesNode = document.getElementById('wrong-guesses');
-const canvasNode = document.getElementById('canvas');
-const imageNode = document.getElementById('bear-pic').src;
+//const canvasNode = document.getElementById('canvas');
+//const imageNode = document.getElementById('bear-pic').src;
+const woodsSpan = document.getElementById('woods');
 
 const words = [
     'yogi',
@@ -71,16 +72,27 @@ inputFormNode.addEventListener('submit', function() {
     
 });
 
-function replaceImages() {
-    for(let i = 0; i < imgSrc.length; i++) {
-        imageNode.src = imgSrc[i];
+function addImage() {
+    const imageNode = document.createElement('img');
+    if(wrongGuessesNode.textContent.length === 0) {
+        imageNode.src = './assets/bear-0.png';
+    }
+    else if(wrongGuessesNode.textContent.length === 2) {
+        imageNode.src = './assets/bear-1.png';
     }
 }
+// function replaceImages() {
+//     for(let i = 0; i < imgSrc.length; i++) {
+//         const imageSource = imgSrc[i];
+        
+//         woodsSpan.value.push = imageSource;
+//     }
+// }
 
-while(wrongGuessesNode.textContent.length < 7) {
-    replaceImages();
-}
+// while(wrongGuessesNode.textContent.length < 7) {
+//     replaceImages();
+// }
 
-console.log(wrongGuessesNode);
+// console.log(wrongGuessesNode);
 
 
