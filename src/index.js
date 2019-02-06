@@ -5,6 +5,8 @@ const inputFormNode = document.getElementById('input-form');
 const targetWordNode = document.getElementById('target-word');
 const guessLetterNode = document.getElementById('guess-letter');
 const wrongGuessesNode = document.getElementById('wrong-guesses');
+const canvasNode = document.getElementById('canvas');
+const imageNode = document.getElementById('bear-pic').src;
 
 const words = [
     'yogi',
@@ -16,8 +18,14 @@ const words = [
 ];
 
 const imgSrc = [
+    '../assets/bear-1.png',
+    '../assets/bear-2.png',
+    '../assets/bear-3.png',
+    '../assets/bear-4.png',
+    '../assets/bear-5.png',
+    '../assets/whole-bear-6.png'
 
-]
+];
 
 let targetWord = words[Math.floor(Math.random() * words.length)];   
 let correctLetters = [];
@@ -40,7 +48,6 @@ function targetWordCreate() {
         }
     }   
 }
-console.log(targetWordCreate);
 
 inputFormNode.addEventListener('submit', function() {
     event.preventDefault();
@@ -59,13 +66,21 @@ inputFormNode.addEventListener('submit', function() {
         return result;
     }
     else {
-        wrongGuessesNode.classList.add('wrong-guess');
-        wrongGuessesNode.textContent += guess;
-  
+        wrongGuessesNode.textContent += guess + ' ';
     }
     
 });
 
+function replaceImages() {
+    for(let i = 0; i < imgSrc.length; i++) {
+        imageNode.src = imgSrc[i];
+    }
+}
 
+while(wrongGuessesNode.textContent.length < 7) {
+    replaceImages();
+}
+
+console.log(wrongGuessesNode);
 
 
