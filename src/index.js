@@ -93,7 +93,7 @@ function addImage() {
     else if(wrongGuessesNode.textContent.length === 10) {
         imageNode.src = './assets/bear-5.png';
     }
-    else if(wrongGuessesNode.textContent.length === 12) {
+    else {
         imageNode.src = './assets/whole-bear-6.png';
     }
     woodsSpan.appendChild(imageNode);
