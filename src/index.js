@@ -68,6 +68,7 @@ inputFormNode.addEventListener('submit', function() {
     }
     else {
         wrongGuessesNode.textContent += guess + ' ';
+        addImage();
     }
     
 });
@@ -80,6 +81,22 @@ function addImage() {
     else if(wrongGuessesNode.textContent.length === 2) {
         imageNode.src = './assets/bear-1.png';
     }
+    else if(wrongGuessesNode.textContent.length === 4) {
+        imageNode.src = './assets/bear-2.png';
+    }
+    else if(wrongGuessesNode.textContent.length === 6) {
+        imageNode.src = './assets/bear-3.png';
+    }
+    else if(wrongGuessesNode.textContent.length === 8) {
+        imageNode.src = './assets/bear-4.png';
+    }
+    else if(wrongGuessesNode.textContent.length === 10) {
+        imageNode.src = './assets/bear-5.png';
+    }
+    else if(wrongGuessesNode.textContent.length === 12) {
+        imageNode.src = './assets/whole-bear-6.png';
+    }
+    woodsSpan.appendChild(imageNode);
 }
 // function replaceImages() {
 //     for(let i = 0; i < imgSrc.length; i++) {
