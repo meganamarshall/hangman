@@ -68,48 +68,51 @@ inputFormNode.addEventListener('submit', function() {
     }
     else {
         wrongGuessesNode.textContent += guess + ' ';
-        addImage();
+        addImage(imgSrc);
     }
     
 });
 
-function addImage() {
-    const imageNode = document.createElement('img');
-    if(wrongGuessesNode.textContent.length === 0) {
-        imageNode.src = './assets/bear-0.png';
+function addImage(imgSrc) {
+
+    for(let index = 0; index < imgSrc.length; index++) {
+        const imageNode = document.getElementById('img');
+        const imageSource = imgSrc[index];
+        imageNode.src = imageSource;
     }
-    else if(wrongGuessesNode.textContent.length === 2) {
-        imageNode.src = './assets/bear-1.png';
-    }
-    else if(wrongGuessesNode.textContent.length === 4) {
-        imageNode.src = './assets/bear-2.png';
-    }
-    else if(wrongGuessesNode.textContent.length === 6) {
-        imageNode.src = './assets/bear-3.png';
-    }
-    else if(wrongGuessesNode.textContent.length === 8) {
-        imageNode.src = './assets/bear-4.png';
-    }
-    else if(wrongGuessesNode.textContent.length === 10) {
-        imageNode.src = './assets/bear-5.png';
-    }
-    else {
-        imageNode.src = './assets/whole-bear-6.png';
-    }
-    woodsSpan.appendChild(imageNode);
 }
-// function replaceImages() {
-//     for(let i = 0; i < imgSrc.length; i++) {
-//         const imageSource = imgSrc[i];
-        
-//         woodsSpan.value.push = imageSource;
+//     if(wrongGuessesNode.textContent.length === 0) {
+//         imageNode.src = './assets/bear-0.png';
+//     }
+//     else if(wrongGuessesNode.textContent.length === 2) {
+//         imageNode.src = './assets/bear-1.png';
+    
+//     }
+//     else if(wrongGuessesNode.textContent.length === 4) {
+//         imageNode.src = './assets/bear-2.png';
+//     }
+//     else if(wrongGuessesNode.textContent.length === 6) {
+//         imageNode.src = './assets/bear-3.png';
+//     }
+//     else if(wrongGuessesNode.textContent.length === 8) {
+//         imageNode.src = './assets/bear-4.png';
+//     }
+//     else if(wrongGuessesNode.textContent.length === 10) {
+//         imageNode.src = './assets/bear-5.png';
+//     }
+//     else {
+//         imageNode.src = './assets/whole-bear-6.png';
+//     }
+//     woodsSpan.appendChild(imageNode);
+// }
+// function replaceImage() {
 //     }
 // }
 
-// while(wrongGuessesNode.textContent.length < 7) {
-//     replaceImages();
-// }
+// // while(wrongGuessesNode.textContent.length < 7) {
+// //     replaceImages();
+// // }
 
-// console.log(wrongGuessesNode);
+// // console.log(wrongGuessesNode);
 
 
