@@ -7,6 +7,7 @@ const guessLetterNode = document.getElementById('guess-letter');
 const wrongGuessesNode = document.getElementById('wrong-guesses');
 //const canvasNode = document.getElementById('canvas');
 //const imageNode = document.getElementById('bear-pic').src;
+const imageNode = document.getElementById('img');
 const woodsSpan = document.getElementById('woods');
 
 const words = [
@@ -50,6 +51,12 @@ function targetWordCreate() {
     }   
 }
 
+function addImage() {
+    for(let index = 0; index < imgSrc.length; index++) {
+        const imageSource = imgSrc[index];
+        imageNode.src = imageSource;
+    }
+}
 inputFormNode.addEventListener('submit', function() {
     event.preventDefault();
     const guess = guessLetterNode.value;
@@ -68,19 +75,10 @@ inputFormNode.addEventListener('submit', function() {
     }
     else {
         wrongGuessesNode.textContent += guess + ' ';
-        addImage(imgSrc);
+        addImage();
     }
-    
 });
 
-function addImage(imgSrc) {
-
-    for(let index = 0; index < imgSrc.length; index++) {
-        const imageNode = document.getElementById('img');
-        const imageSource = imgSrc[index];
-        imageNode.src = imageSource;
-    }
-}
 //     if(wrongGuessesNode.textContent.length === 0) {
 //         imageNode.src = './assets/bear-0.png';
 //     }
@@ -104,15 +102,12 @@ function addImage(imgSrc) {
 //         imageNode.src = './assets/whole-bear-6.png';
 //     }
 //     woodsSpan.appendChild(imageNode);
-// }
+
 // function replaceImage() {
 //     }
-// }
 
-// // while(wrongGuessesNode.textContent.length < 7) {
-// //     replaceImages();
-// // }
 
-// // console.log(wrongGuessesNode);
+
+console.log(wrongGuessesNode);
 
 
