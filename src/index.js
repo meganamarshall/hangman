@@ -7,7 +7,6 @@ const guessLetterNode = document.getElementById('guess-letter');
 const wrongGuessesNode = document.getElementById('wrong-guesses');
 //const canvasNode = document.getElementById('canvas');
 //const imageNode = document.getElementById('bear-pic').src;
-const imageNode = document.getElementById('img');
 const woodsSpan = document.getElementById('woods');
 
 const words = [
@@ -26,7 +25,7 @@ const imgSrc = [
     '../assets/bear-4.png',
     '../assets/bear-5.png',
     '../assets/whole-bear-6.png'
-
+    
 ];
 
 let targetWord = words[Math.floor(Math.random() * words.length)];   
@@ -53,8 +52,9 @@ function targetWordCreate() {
 
 function addImage() {
     for(let index = 0; index < imgSrc.length; index++) {
+        const imageNode = document.getElementById('bear-pic');
         const imageSource = imgSrc[index];
-        imageNode.src = imageSource;
+        imageNode.src = (imageSource);
     }
 }
 inputFormNode.addEventListener('submit', function() {
