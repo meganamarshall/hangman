@@ -53,8 +53,10 @@ function targetWordCreate() {
 function addImage() {
     for(let index = 0; index < imgSrc.length; index++) {
         const imageNode = document.getElementById('bear-pic');
-        const imageSource = imgSrc[index];
-        imageNode.src = (imageSource);
+        let imageSource = imgSrc[index];
+        imageNode.src = imageSource;
+
+        console.log(imageSource);
     }
 }
 inputFormNode.addEventListener('submit', function() {
@@ -108,6 +110,6 @@ inputFormNode.addEventListener('submit', function() {
 
 
 
-console.log(wrongGuessesNode);
+
 
 
